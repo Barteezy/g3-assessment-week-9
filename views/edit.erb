@@ -1,0 +1,8 @@
+<h1>Edit Todo</h1>
+
+
+<form action="/edit/<%=todo.id%>" method="post">
+  <textarea type="text" name="body"><%=todo.body%></textarea>
+  <input type="hidden" name="_method" value="patch">
+  <input type="submit" value="Edit"/>
+</form>

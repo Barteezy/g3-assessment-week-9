@@ -20,13 +20,23 @@
         </li>
       </ul>
     </form>
-  </div>
+<div>
   <div class="col-lg-8">
     <h2>ToDo List</h2>
-    <ul class="todos">
+
+    <ul>
+
       <% todos.each do |todo| %>
-          <li><%= todo.body %></li>
+      <form action="/edit/<%=todo.id%>" method="get">
+        <li><%= todo.body %></li>
+        <input type="submit" value="Edit"/>
+          </form>
+        <form action="/complete/<%=todo.id%>" method="post">
+          <input type="hidden" name="_method" value="delete"/>
+          <input type="submit" value="Complete Todo"/>
+        </form>
       <% end %>
+      </ul>
     </ul>
   </div>
 </div>
