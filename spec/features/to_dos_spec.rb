@@ -22,8 +22,24 @@ feature "ToDos" do
 
     expect(page).to have_content "ToDo added"
 
-    within ".todos" do
-      expect(page).to have_content "Get a haircut"
-    end
+
+
+
+    expect(page).to have_content "Get a haircut"
+
+    click_on "Update ToDo"
+
+    expect(page).to have_content "Get a haircut"
+
+    fill_in "body", :with => "Get a haircut now"
+    click_on "Update ToDo"
+
+    expect(page).to have_content "Get a haircut now"
+
+    click_on "Complete"
+
+    expect(page).to have_content "Todo Completed"
+
   end
+
 end

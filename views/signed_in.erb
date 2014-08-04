@@ -24,12 +24,11 @@
   <div class="col-lg-8">
     <h2>ToDo List</h2>
 
-    <ul>
-
+    <ul class="todos">
       <% todos.each do |todo| %>
       <form action="/edit/<%=todo.id%>" method="get">
         <li><%= todo.body %></li>
-        <input type="submit" value="Edit"/>
+        <input type="submit" value="Update ToDo"/>
           </form>
         <form action="/complete/<%=todo.id%>" method="post">
           <input type="hidden" name="_method" value="delete"/>
@@ -37,6 +36,5 @@
         </form>
       <% end %>
       </ul>
-    </ul>
   </div>
 </div>
